@@ -18,12 +18,12 @@ env = environ.Env()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-ZOHO_CLIENT_SECRET = os.environ.get('ZOHO_CLIENT_SECRET')
-ZOHO_CLIENT_ID = os.environ.get('ZOHO_CLIENT_ID')
-ZOHO_REFRESH_TOKEN = os.environ.get('ZOHO_REFRESH_TOKEN')
-ZOHO_REDIRECT_URI = os.environ.get('ZOHO_REDIRECT_URI')
-ZOHO_WORKBOOK_ID = os.environ.get('ZOHO_WORKBOOK_ID')
-ZOHO_WORKSHEET_ID = os.environ.get('ZOHO_WORKSHEET_ID')
+# ZOHO_CLIENT_SECRET = os.environ.get('ZOHO_CLIENT_SECRET')
+# ZOHO_CLIENT_ID = os.environ.get('ZOHO_CLIENT_ID')
+# ZOHO_REFRESH_TOKEN = os.environ.get('ZOHO_REFRESH_TOKEN')
+# ZOHO_REDIRECT_URI = os.environ.get('ZOHO_REDIRECT_URI')
+# ZOHO_WORKBOOK_ID = os.environ.get('ZOHO_WORKBOOK_ID')
+# ZOHO_WORKSHEET_ID = os.environ.get('ZOHO_WORKSHEET_ID')
 
 
 # Access environment variables
