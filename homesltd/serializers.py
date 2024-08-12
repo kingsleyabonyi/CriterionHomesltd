@@ -10,6 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         # fields = '__all__'
 
 
-
+class EmailSerializer(serializers.Serializer):
+    email_address = serializers.EmailField()
 
     
