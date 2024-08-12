@@ -106,15 +106,15 @@ class UserCreateView(APIView):
             response = requests.post(
                 url=f"https://mail.zoho.com/api/accounts/{os.environ.get('ACCOUNT_ID')}/messages",
                 headers={
-                    'Authorization': f'Zoho-oauthtoken {access_token}',
-                    'Content-Type': 'application/application/json',
-                    'Accept': 'application/json' 
+                    'Authorization': f'Zoho-oauthtoken {access_token}'
                 },
-                data=mail_data
+                json=mail_data
             )
-            response.raise_for_status()
+            if not response.ok:
+                raise Exception(response.text)
+
             return {'message': 'Mail sent successfully!', "status": status.HTTP_201_CREATED}
-        except requests.RequestException as e:
+        except Exception as e:
             logger.error(f"Error sending mail: {str(e)}")
             return {"message": str(e), "status": status.HTTP_500_INTERNAL_SERVER_ERROR}
 
