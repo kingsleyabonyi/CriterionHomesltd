@@ -44,7 +44,7 @@ SECRET_KEY = 'django-insecure-ag7odhn+y-jwfg$2l-wp2fat1+tu62_b375n%%&!x-2ny!r%pm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://criteriontld.fly.dev/', '*']
 
 
 # Application definition
@@ -140,5 +140,26 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://localhost:8080',
+]
+
+CORS_ALLOW_METHOD = [
+    'GET', 'POST', 'PUT', 'DELETE'
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
